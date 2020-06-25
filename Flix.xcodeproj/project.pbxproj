@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		280CB3B724A3F3F100979D83 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 280CB3B624A3F3F100979D83 /* MovieCell.m */; };
 		280CB3BD24A4102500979D83 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280CB3BC24A4102500979D83 /* DetailsViewController.m */; };
+		280CB40724A549D100979D83 /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280CB40624A549D100979D83 /* MoviesGridViewController.m */; };
+		280CB40A24A54D3500979D83 /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 280CB40924A54D3500979D83 /* MovieCollectionCell.m */; };
 		28C43B0124A3BA090092F0D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C43B0024A3BA090092F0D9 /* AppDelegate.m */; };
 		28C43B0424A3BA090092F0D9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C43B0324A3BA090092F0D9 /* SceneDelegate.m */; };
 		28C43B0A24A3BA090092F0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C43B0824A3BA090092F0D9 /* Main.storyboard */; };
@@ -49,6 +51,10 @@
 		280CB3B624A3F3F100979D83 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		280CB3BB24A4102500979D83 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		280CB3BC24A4102500979D83 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		280CB40524A549D100979D83 /* MoviesGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesGridViewController.h; sourceTree = "<group>"; };
+		280CB40624A549D100979D83 /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
+		280CB40824A54D3500979D83 /* MovieCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
+		280CB40924A54D3500979D83 /* MovieCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionCell.m; sourceTree = "<group>"; };
 		28C43AFC24A3BA090092F0D9 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C43AFF24A3BA090092F0D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28C43B0024A3BA090092F0D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -166,6 +172,8 @@
 			children = (
 				280CB3B524A3F3F100979D83 /* MovieCell.h */,
 				280CB3B624A3F3F100979D83 /* MovieCell.m */,
+				280CB40824A54D3500979D83 /* MovieCollectionCell.h */,
+				280CB40924A54D3500979D83 /* MovieCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +185,8 @@
 				28C43B3524A3C8CE0092F0D9 /* MoviesViewController.m */,
 				280CB3BB24A4102500979D83 /* DetailsViewController.h */,
 				280CB3BC24A4102500979D83 /* DetailsViewController.m */,
+				280CB40524A549D100979D83 /* MoviesGridViewController.h */,
+				280CB40624A549D100979D83 /* MoviesGridViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -453,8 +463,10 @@
 				280CB3B724A3F3F100979D83 /* MovieCell.m in Sources */,
 				28C43B3624A3C8CE0092F0D9 /* MoviesViewController.m in Sources */,
 				280CB3BD24A4102500979D83 /* DetailsViewController.m in Sources */,
+				280CB40A24A54D3500979D83 /* MovieCollectionCell.m in Sources */,
 				28C43B1224A3BA0A0092F0D9 /* main.m in Sources */,
 				28C43B0424A3BA090092F0D9 /* SceneDelegate.m in Sources */,
+				280CB40724A549D100979D83 /* MoviesGridViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
