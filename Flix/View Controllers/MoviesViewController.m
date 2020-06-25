@@ -20,12 +20,18 @@
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+
 @end
 
 @implementation MoviesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+  // Start the activity indicator
+    [self.activityIndicator startAnimating];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -52,6 +58,10 @@
 
                NSLog(@"%@", dataDictionary);
                
+               // Stop the activity indicator
+               // Hides automatically if "Hides When Stopped" is enabled
+               [self.activityIndicator stopAnimating];
+               
                // TODO: Get the array of movies
                self.movies = dataDictionary[@"results"];
                for (NSDictionary *movie in self.movies) {
@@ -60,6 +70,7 @@
             
                // TODO: Reload your table view data
                [self.tableView reloadData];
+               
            }
         [self.refreshControl endRefreshing];
        }];
