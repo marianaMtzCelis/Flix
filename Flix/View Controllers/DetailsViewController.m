@@ -19,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *synopsysLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
 @end
 
 @implementation DetailsViewController
@@ -41,6 +43,7 @@
     
     self.titleLabel.text = self.movie[@"title"];
     self.synopsysLabel.text = self.movie[@"overview"];
+    self.dateLabel.text = self.movie[@"release_date"];
     
     [self.titleLabel sizeToFit];
     [self.synopsysLabel sizeToFit];
