@@ -52,6 +52,41 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
                NSLog(@"%@", [error localizedDescription]);
+               
+               //ERROR ALERT STYLE
+               UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Title"
+                      message:@"Message"
+               preferredStyle:(UIAlertControllerStyleAlert)];
+               
+               // create a cancel action
+               UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                                        // handle cancel response here. Doing nothing will dismiss the view.
+                                                                 }];
+               // add the cancel action to the alertController
+               [alert addAction:cancelAction];
+
+               // create an OK action
+               UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                  style:UIAlertActionStyleDefault
+                                                                handler:^(UIAlertAction * _Nonnull action) {
+                                                                        // handle response here.
+                                                                }];
+               // add the OK action to the alert controller
+               [alert addAction:okAction];
+               
+               [self presentViewController:alert animated:YES completion:^{
+                   // optional code for what happens after the alert controller has finished presenting
+               }];
+               
+               [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert
+                 animated:YES
+               completion:^{
+                       // optional code for what happens after the alert controller has finished presenting
+               }];
+               
+               // FINISH ERROR ALERT STYLE
            }
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
