@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movies-->
+        <!--Now Playing-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MoviesViewController" sceneMemberID="viewController">
@@ -66,7 +66,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Movies" id="p9J-R9-sOj"/>
+                    <navigationItem key="navigationItem" title="Now Playing" id="p9J-R9-sOj"/>
                     <connections>
                         <outlet property="activityIndicator" destination="wAU-ca-thd" id="Jeq-sf-Rgd"/>
                         <outlet property="tableView" destination="wT0-tb-eaR" id="kHv-Bq-VxN"/>
@@ -76,7 +76,7 @@
             </objects>
             <point key="canvasLocation" x="138" y="742"/>
         </scene>
-        <!--Movies Grid View Controller-->
+        <!--Drama-->
         <scene sceneID="jat-49-VLl">
             <objects>
                 <viewController id="ei3-uQ-56i" customClass="MoviesGridViewController" sceneMemberID="viewController">
@@ -119,7 +119,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="b0w-HF-c3i"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZWX-d3-rwd"/>
+                    <navigationItem key="navigationItem" title="Drama" id="ZWX-d3-rwd"/>
                     <connections>
                         <outlet property="collectionView" destination="3ZQ-Tt-59O" id="smW-Sz-OyX"/>
                     </connections>
@@ -211,7 +211,7 @@
         <!--Drama-->
         <scene sceneID="Xop-gC-dDB">
             <objects>
-                <navigationController id="Y1x-fN-mnk" sceneMemberID="viewController">
+                <navigationController title="Drama" id="Y1x-fN-mnk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Drama" image="ticket_tabbar_icon" id="tDt-dr-Hu0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hKk-am-3ly">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -228,7 +228,7 @@
         <!--Now Playing-->
         <scene sceneID="wca-cJ-rse">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="06n-cY-lNT" sceneMemberID="viewController">
+                <navigationController title="Now Playing" automaticallyAdjustsScrollViewInsets="NO" id="06n-cY-lNT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Now Playing" image="now_playing_tabbar_item" id="bmw-dZ-TxV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5BZ-d7-Noe">
