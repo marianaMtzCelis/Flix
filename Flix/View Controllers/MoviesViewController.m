@@ -22,6 +22,9 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (nonatomic, strong) NSArray *filteredData;
 
 @end
 
@@ -33,8 +36,10 @@
   // Start the activity indicator
     [self.activityIndicator startAnimating];
     
+    self.searchBar.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
     [self fetchMovies];
     
     // Refresh
@@ -99,6 +104,8 @@
                
                // TODO: Get the array of movies
                self.movies = dataDictionary[@"results"];
+               self.filteredData = self.movies;
+               
                for (NSDictionary *movie in self.movies) {
                    NSLog(@"%@", movie[@"title"]);
                }
@@ -119,14 +126,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.movies.count;
+    return self.filteredData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
+    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     
-    NSDictionary *movie = self.movies[indexPath.row];
+    NSDictionary *movie = self.filteredData[indexPath.row];
     cell.titleLabel.text = movie[@"title"];
     cell.synopsisLabel.text = movie[@"overview"];
     
@@ -142,6 +149,25 @@
     return cell;
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+            return [evaluatedObject[@"title"] containsString:searchText];
+        }];
+        self.filteredData = [self.movies filteredArrayUsingPredicate:predicate];
+        
+        NSLog(@"%@", self.filteredData);
+        
+    }
+    else {
+        self.filteredData = self.movies;
+    }
+    
+    [self.tableView reloadData];
+ 
+}
 
 
 #pragma mark - Navigation
