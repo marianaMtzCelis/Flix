@@ -54,8 +54,8 @@
                NSLog(@"%@", [error localizedDescription]);
                
                //ERROR ALERT STYLE
-               UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Title"
-                      message:@"Message"
+               UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Error"
+                      message:@"Please check your network Connection"
                preferredStyle:(UIAlertControllerStyleAlert)];
                
                // create a cancel action
